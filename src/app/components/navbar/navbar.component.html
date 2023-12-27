@@ -1,0 +1,22 @@
+<header>
+  <nav>
+    <h2>MODERNS</h2>
+    <img class="menu" src="../../../assets/menu.svg" alt="icon menu" (click)="showMenu()" >
+    <div class="links-container" [ngClass]="{'visible': showedMenu}" >
+      <img class="close" src="../../../assets/close.svg" alt="icon close" (click)="showMenu()">
+      <p>Colecctions</p>
+      <p>Men</p>
+      <p>Women</p>
+      <p>About</p>
+      <p>Contact</p>
+    </div>
+    <div class="img-container">
+      <img (click)="showCart()" src="../../../assets/trolley.svg" alt="trolley">
+      <img src="../../../assets/user.svg" alt="">
+    </div>
+  </nav>
+</header>
+
+<div class="modal">
+  <app-productmodal [ngClass]="{'visible': showedCart}" />
+</div>

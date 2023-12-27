@@ -1,0 +1,29 @@
+<div class="modal">
+  <h3>Cart</h3>
+
+  @if (isEmpty) {
+    <div>
+      <p class="empty">Your cart is empty</p>
+    </div>
+  } @else {
+    <div class="products-container">
+      @for (product of productsToCart; track product.id) {
+        <div class="product">
+          <picture class="cart-picture">
+            <img src="../../../assets/{{ product.image }}" alt="image of product">
+          </picture>
+          <div class="cart-title-container">
+            <div class="cart-title">
+              <p>{{ product.title }}</p>
+            </div>
+            <div class="cart-price">
+              <p>{{ product.price | currency}}</p>
+            </div>
+          </div>
+          <img src="../../../assets/tash.svg" alt="tash for delete" class="tash" (click)="deleteFromCart(product.id)">
+        </div>
+      }
+    </div>
+    <button>Checkout</button>
+  }
+</div>

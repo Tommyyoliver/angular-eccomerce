@@ -1,0 +1,7 @@
+<section>
+  @for (product of productsList; track product.id) {
+    <article>
+      <app-productitem [product]=product/>
+    </article>
+  }
+</section>

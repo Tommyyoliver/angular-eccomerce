@@ -1,0 +1,11 @@
+<div class="container">
+  <picture>
+    <img src="../../assets/{{ product?.image }}" alt="image of product">
+  </picture>
+  <p class="title">{{ product?.title }}</p>
+  <p class="rating"><span>☆</span> {{ product?.rating }}</p>
+  <div>
+    <p class="price">{{ product?.price | currency }}</p>
+    <button (click)="addToCart(product?.id)" >Add to cart</button>
+  </div>
+</div>
